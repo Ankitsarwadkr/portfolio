@@ -7,59 +7,106 @@ const Projects = () => {
     {
       title: "BookMyTurf - Turf Booking Portal",
       period: "Feb 2025 – April 2025",
-      description: "A comprehensive turf booking system with real-time slot availability, user authentication, and booking management.",
-      techStack: ["Java", "JSP", "MySQL", "AJAX", "Bootstrap"],
+      description: "A dynamic booking system for turf owners and users with real-time slot availability and secure authentication.",
+      techStack: ["JSP", "AJAX", "MySQL", "Bootstrap"],
       features: [
         "Real-time slot availability checking and booking",
         "User authentication and session management",
         "CRUD operations for bookings, user profiles, and cancellations",
-        "Booking confirmation with email notifications",
+        "Booking confirmation system",
         "Admin panel for turf and slot management",
         "Concurrency control for simultaneous bookings"
       ],
-      apiExample: `// API Response Example
-{
-  "status": "success",
-  "booking": {
-    "id": "BK12345",
-    "turfName": "Green Valley Turf",
-    "date": "2025-05-15",
-    "timeSlot": "18:00-19:00",
-    "user": "ankit@example.com",
-    "amount": 500,
-    "status": "confirmed"
-  }
-}`,
-      github: "#",
-      demo: "#"
+      github: "#"
     },
     {
-      title: "Car Rental Management System",
-      period: "Aug 2024 – Sep 2024",
-      description: "Desktop-based car rental management system with comprehensive CRUD operations and inventory management.",
-      techStack: ["Java Swing", "MySQL", "JDBC"],
+      title: "Blog Application - RESTful Web App",
+      period: "Jan 2025 – Mar 2025",
+      description: "A secure REST API blogging platform with JWT-based authentication and role-based access control (Admin/User).",
+      techStack: ["Spring Boot", "Spring Security", "JWT", "MySQL", "Hibernate"],
       features: [
-        "Customer booking and registration system",
-        "Vehicle inventory management with availability tracking",
-        "Automated billing and invoice generation",
-        "Rental history and reports",
-        "CRUD operations for customers, vehicles, and bookings",
-        "Database-driven architecture with MySQL"
+        "JWT-based authentication and role-based access control",
+        "CRUD APIs for users, posts, comments, and likes with ownership checks",
+        "Google OAuth2 integration for social authentication",
+        "OpenAI API integration for automated category suggestions",
+        "DTO-based mapping to separate database entities from API responses",
+        "Unit testing using JUnit & Mockito"
       ],
-      apiExample: `// Database Schema Example
-CREATE TABLE bookings (
-  booking_id INT PRIMARY KEY,
-  customer_id INT,
-  vehicle_id INT,
-  start_date DATE,
-  end_date DATE,
-  total_amount DECIMAL(10,2),
-  status VARCHAR(20),
-  FOREIGN KEY (customer_id) REFERENCES customers(id),
-  FOREIGN KEY (vehicle_id) REFERENCES vehicles(id)
+      apiExample: `// Authentication API Response
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "user": {
+    "id": 1,
+    "username": "ankit_dev",
+    "email": "ankit@example.com",
+    "role": "ADMIN"
+  }
+}
+
+// Post Creation Response
+{
+  "postId": 123,
+  "title": "Understanding Spring Security",
+  "content": "...",
+  "author": "ankit_dev",
+  "category": "Backend Development",
+  "createdAt": "2025-03-15T10:30:00Z"
+}`,
+      github: "#"
+    },
+    {
+      title: "Shop Landing Page with Multilingual Support",
+      period: "Oct 2024 – Dec 2024",
+      description: "A multilingual e-commerce landing page with Spring Boot backend, MySQL database, and Google Translation API integration for seamless language switching.",
+      techStack: ["Spring Boot", "MySQL", "Google Translation API", "REST APIs", "HTML/CSS"],
+      features: [
+        "Dynamic language toggle (English/Marathi)",
+        "Admin panel for product and content management",
+        "REST API endpoints for product catalog",
+        "Database-driven content management",
+        "Responsive design with Bootstrap",
+        "Real-time translation using Google Translation API"
+      ],
+      apiExample: `// Product API Response
+{
+  "productId": 101,
+  "name": "Premium Laptop",
+  "description": "High-performance laptop for developers",
+  "price": 75000,
+  "category": "Electronics",
+  "inStock": true,
+  "language": "en"
+}
+
+// Translation API Response
+{
+  "originalText": "Premium Laptop",
+  "translatedText": "प्रीमियम लॅपटॉप",
+  "targetLanguage": "mr",
+  "sourceLanguage": "en"
+}`,
+      databaseSchema: `-- Products Table
+CREATE TABLE products (
+  product_id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  description TEXT,
+  price DECIMAL(10,2) NOT NULL,
+  category VARCHAR(100),
+  in_stock BOOLEAN DEFAULT true,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Translations Table
+CREATE TABLE translations (
+  translation_id INT PRIMARY KEY AUTO_INCREMENT,
+  entity_type VARCHAR(50),
+  entity_id INT,
+  field_name VARCHAR(100),
+  language_code VARCHAR(5),
+  translated_text TEXT,
+  FOREIGN KEY (entity_id) REFERENCES products(product_id)
 );`,
-      github: "#",
-      demo: "#"
+      github: "#"
     }
   ];
 
@@ -113,23 +160,30 @@ CREATE TABLE bookings (
                   </ul>
                 </div>
 
-                <div className="code-block">
-                  <pre className="text-xs md:text-sm overflow-x-auto">
-                    <code>{project.apiExample}</code>
-                  </pre>
-                </div>
+                {project.apiExample && (
+                  <div className="code-block">
+                    <pre className="text-xs md:text-sm overflow-x-auto">
+                      <code>{project.apiExample}</code>
+                    </pre>
+                  </div>
+                )}
+
+                {project.databaseSchema && (
+                  <div>
+                    <h4 className="text-sm font-semibold text-accent mb-3">Database Schema:</h4>
+                    <div className="code-block">
+                      <pre className="text-xs md:text-sm overflow-x-auto">
+                        <code>{project.databaseSchema}</code>
+                      </pre>
+                    </div>
+                  </div>
+                )}
 
                 <div className="flex flex-wrap gap-3">
                   <Button variant="outline" size="sm" className="gap-2" asChild>
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github className="w-4 h-4" />
                       View Code
-                    </a>
-                  </Button>
-                  <Button variant="outline" size="sm" className="gap-2" asChild>
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4" />
-                      Live Demo
                     </a>
                   </Button>
                 </div>
