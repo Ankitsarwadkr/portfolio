@@ -5,7 +5,7 @@ import { Github, Linkedin, Mail, Download } from "lucide-react";
 const Hero = () => {
   const skills = [
     "Java", "Spring Boot", "Hibernate", "REST APIs", 
-    "MySQL", "Git", "Linux", "Postman"
+    "MySQL", "Git", "Postman"
   ];
 
   return (
@@ -37,8 +37,8 @@ const Hero = () => {
                 <span className="text-primary">~</span>/portfolio <span className="text-accent">$</span> cat about.txt
               </p>
               <p className="text-foreground leading-relaxed">
-                MCA graduate specializing in Java backend development with hands-on experience 
-                in building scalable web applications using Spring Boot, REST APIs, and MySQL. 
+                Hi,I'm Ankit Sarwadkar, A MCA graduate specializing in Java backend development with hands-on experience 
+                in building scalable web applications using Spring Boot, REST APIs, and MySQL through academic projects. 
                 Passionate about clean code, efficient database design, and modern backend architectures.
               </p>
             </div>
@@ -61,18 +61,32 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-wrap gap-3 pt-4">
-              <Button variant="default" size="sm" className="gap-2">
-                <Download className="w-4 h-4" />
-                Download Resume
-              </Button>
+                  <Button 
+                        variant="default" 
+                        size="sm" 
+                        className="gap-2" 
+                        asChild
+                      >
+                        <a 
+                          href="/Ankit_Sarwadkar_Resume.pdf" 
+                          download="Ankit_Sarwadkar_Resume.pdf" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          <Download className="w-4 h-4" />
+                          Download Resume
+                        </a>
+                      </Button>
+
+
               <Button variant="outline" size="sm" className="gap-2" asChild>
-                <a href="https://github.com/ankitsarwadkar" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/Ankitsarwadkr" target="_blank" rel="noopener noreferrer">
                   <Github className="w-4 h-4" />
                   GitHub
                 </a>
               </Button>
               <Button variant="outline" size="sm" className="gap-2" asChild>
-                <a href="https://linkedin.com/in/ankitsarwadkar" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/ankitsarwadkar/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-4 h-4" />
                   LinkedIn
                 </a>

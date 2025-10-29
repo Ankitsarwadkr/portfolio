@@ -34,7 +34,7 @@ const Experience = () => {
                   </p>
                   <p className="flex items-start gap-2">
                     <span className="text-primary mt-1">▸</span>
-                    <span>Contributed to REST API development and backend logic for dynamic web applications</span>
+                    <span>Contributed to backend logic for dynamic web applications</span>
                   </p>
                   <p className="flex items-start gap-2">
                     <span className="text-primary mt-1">▸</span>
@@ -43,10 +43,6 @@ const Experience = () => {
                   <p className="flex items-start gap-2">
                     <span className="text-primary mt-1">▸</span>
                     <span>Performed debugging, testing, and code optimization to ensure application performance</span>
-                  </p>
-                  <p className="flex items-start gap-2">
-                    <span className="text-primary mt-1">▸</span>
-                    <span>Collaborated with the team following Agile methodology and version control using Git</span>
                   </p>
                 </div>
               </div>

@@ -16,7 +16,7 @@ const Skills = () => {
     {
       title: "Tools & Technologies",
       icon: Wrench,
-      skills: ["Git", "Linux", "Postman", "VS Code", "IntelliJ IDEA", "AJAX"]
+      skills: ["Git", "Postman", "VS Code", "IntelliJ IDEA", "AJAX"]
     },
     {
       title: "Frontend (Secondary)",
@@ -89,7 +89,6 @@ $ cat competencies.txt
 ├── Data Structures & Algorithms
 ├── Object-Oriented Programming (OOP)
 ├── Software Development Life Cycle (SDLC)
-├── Agile Methodology
 ├── RESTful API Design
 ├── Version Control (Git)
 └── Problem Solving & Debugging
@@ -97,7 +96,6 @@ $ cat competencies.txt
 # Currently Learning
 $ ls learning/
 ├── Cloud Platforms (AWS, Azure basics)
-├── Microservices Architecture
 └── Advanced Spring Boot Features`}
                 </code>
               </pre>

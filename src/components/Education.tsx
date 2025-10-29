@@ -28,13 +28,11 @@ const Education = () => {
   "graduation": "June 2025",
   "cgpa": 8.60,
   "coursework": [
+    "Basics of AI",
     "Java Programming",
-    "Spring Boot Framework",
     "Database Management Systems",
-    "REST API Development",
     "Data Structures & Algorithms",
-    "Object-Oriented Programming",
-    "Software Development Life Cycle"
+    "Software Engineering"
   ]
 }`}
                 </code>
@@ -50,6 +48,11 @@ const Education = () => {
   "location": "Solapur",
   "graduation": "July 2023",
   "cgpa": 8.47
+  "coursework": [
+    "C and C++ Programming",
+    "Operating Systems",
+    "MySQL"
+]
 }`}
                 </code>
               </pre>

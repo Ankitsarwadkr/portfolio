@@ -19,7 +19,7 @@ const Index = () => {
         <Contact />
       </main>
       <footer className="border-t border-border py-6 text-center text-sm text-muted-foreground">
-        <p>© 2025 Ankit Sarwadkar. Built with React, TypeScript & Tailwind CSS.</p>
+        <p>© 2025 Ankit Sarwadkar.</p>
       </footer>
     </div>
   );

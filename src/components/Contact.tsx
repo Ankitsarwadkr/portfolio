@@ -69,7 +69,7 @@ const Contact = () => {
                   <div>
                     <p className="text-sm text-muted-foreground">GitHub</p>
                     <a 
-                      href="https://github.com/ankitsarwadkar"
+                      href="https://github.com/Ankitsarwadkr"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-foreground hover:text-primary transition-colors break-all"
@@ -84,7 +84,7 @@ const Contact = () => {
                   <div>
                     <p className="text-sm text-muted-foreground">LinkedIn</p>
                     <a 
-                      href="https://linkedin.com/in/ankitsarwadkar"
+                      href="https://www.linkedin.com/in/ankitsarwadkar"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-foreground hover:text-primary transition-colors break-all"
@@ -119,7 +119,7 @@ $ echo "Available for: Full-time | Internship | Freelance"
               </Button>
               <Button variant="outline" size="sm" asChild>
                 <a 
-                  href="https://linkedin.com/in/ankitsarwadkar"
+                  href="https://www.linkedin.com/in/ankitsarwadkar"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
