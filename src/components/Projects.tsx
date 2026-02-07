@@ -5,41 +5,38 @@ import { Button } from "@/components/ui/button";
 const Projects = () => {
   const projects = [
     {
-      title: "BookMyTurf - Turf Booking Platform",
-      period: "Oct 2024 – Jan 2025",
-      description:
-        "A comprehensive turf booking system with real-time slot management, Razorpay payment integration, and role-based dashboards for customers, owners, and admins.",
-      techStack: ["Spring Boot", "React", "TypeScript", "MySQL", "Razorpay API", "JWT", "REST APIs"],
-      features: [
-        "Real-time slot availability system with conflict prevention and booking validation",
-        "Razorpay payment gateway integration for secure online transactions",
-        "JWT-based authentication with role-based access control (Admin/Owner/Customer)",
-        "Automated email notifications for booking confirmations and updates",
-        "Owner dashboard for managing turfs, schedules, slots, and earnings analytics",
-        "Admin panel for user approval, owner verification, and payout processing",
-        "Responsive React frontend with TypeScript for type-safe development"
-      ],
-      apiExample: `// Create Booking API
+  title: "BookMyTurf - Two-Sided Marketplace Platform",
+  period: "Feb 2025 – Present",
+  description:
+    "Production-grade two-sided marketplace connecting users and turf owners with complete payment orchestration, automated payout settlements, and real-time transaction handling. Features role-based authentication, Razorpay integration for both payments and payouts, and advanced concurrency control.",
+  techStack: ["Spring Boot", "PostgreSQL", "Razorpay API", "Spring Security", "JWT", "Cloudinary", "Spring Mail", "Spring Scheduler", "React", "TypeScript"],
+  features: [
+    "Razorpay dual integration: Payment Gateway for bookings + Payout API for owner settlements with automated weekly batch processing",
+    "Multi-role authentication (USER/OWNER/ADMIN) with cookie-based JWT, document upload verification, and multi-stage admin approval workflow",
+    "Pessimistic database locking to prevent double-booking in high-concurrency scenarios, ensuring data consistency across simultaneous reservations",
+    "Dynamic pricing engine with time-based slot pricing and automated 7-day slot generation using Spring Scheduler",
+    "Weekly payout batch system with complex business logic, platform fee deduction, execution tracking, and automatic retry mechanism for failed transfers",
+    "Webhook handling for Razorpay payment confirmations with signature validation and automated email notifications for transaction lifecycle",
+    "Cloudinary CDN integration for scalable image management, storing only URLs in PostgreSQL for optimized query performance",
+    "State machine implementation for booking lifecycle (PENDING → CONFIRMED → EXPIRED) and payout execution (PENDING → PAID/FAILED)",
+    "Admin dashboard with owner verification, payout batch management, execution monitoring, and detailed audit trails with retry history",
+    "Automated email system using Spring Mail for booking confirmations, payment updates, verification results, and payout alerts"
+  ],
+  apiExample: `// Booking Creation with Payment
 POST /api/customer/bookings/create
-
-Request:
 {
   "turfId": 5,
   "slotIds": [12, 13, 14]
 }
-
-Response:
-{
+Response: {
   "bookingId": "BKG123456",
   "totalAmount": 1500,
   "status": "PENDING_PAYMENT",
   "razorpayOrderId": "order_abc123"
 }
 
-// Payment Verification
+// Razorpay Payment Verification
 POST /api/customer/payments/verify
-
-Request:
 {
   "bookingId": "BKG123456",
   "razorpayOrderId": "order_abc123",
@@ -47,13 +44,35 @@ Request:
   "razorpaySignature": "sig_hash..."
 }
 
-Response:
+// Webhook - Payment Confirmation
+POST /api/webhooks/razorpay
+X-Razorpay-Signature: webhook_signature
 {
-  "status": "CONFIRMED",
-  "message": "Booking confirmed successfully"
+  "event": "payment.captured",
+  "payload": {...}
+}
+
+// Weekly Payout Batch Processing
+POST /api/admin/payouts/batch/create
+Response: {
+  "batchId": "BATCH_2025_WK8",
+  "totalOwners": 15,
+  "totalAmount": 125000,
+  "platformFee": 12500,
+  "netPayout": 112500
+}
+
+// Payout Execution with Retry
+POST /api/admin/payouts/batch/{batchId}/execute
+Response: {
+  "executionId": "EXEC_001",
+  "status": "IN_PROGRESS",
+  "successful": 12,
+  "failed": 3,
+  "retryPending": 3
 }`,
-      github: "https://github.com/Ankitsarwadkr/turf_Backend",
-    },
+  github: "https://github.com/Ankitsarwadkr/turf_Backend",
+},
     {
       title: "Blog Application - RESTful Web App",
       period: "Jan 2025 – Mar 2025",
