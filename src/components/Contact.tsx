@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
+import { Mail, MapPin, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Contact = () => {
@@ -42,19 +42,6 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-primary mt-1" />
-                  <div>
-                    <p className="text-sm text-muted-foreground">Phone</p>
-                    <a 
-                      href="tel:+918600984013"
-                      className="text-foreground hover:text-primary transition-colors"
-                    >
-                      (+91) 8600984013
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-primary mt-1" />
                   <div>
                     <p className="text-sm text-muted-foreground">Location</p>
@@ -74,7 +61,7 @@ const Contact = () => {
                       rel="noopener noreferrer"
                       className="text-foreground hover:text-primary transition-colors break-all"
                     >
-                      github.com/ankitsarwadkar
+                      github.com/Ankitsarwadkr
                     </a>
                   </div>
                 </div>
@@ -104,8 +91,11 @@ const Contact = () => {
 $ echo "Open to backend development opportunities"
 > Open to backend development opportunities
 
-$ echo "Available for: Full-time | Internship | Freelance"
-> Available for: Full-time | Internship | Freelance`}
+$ echo "Available from: June 2025"
+> Available from: June 2025
+
+$ echo "Interested in: Full-time | Internship"
+> Interested in: Full-time | Internship`}
                   </code>
                 </pre>
               </div>
@@ -124,6 +114,15 @@ $ echo "Available for: Full-time | Internship | Freelance"
                   rel="noopener noreferrer"
                 >
                   Connect on LinkedIn
+                </a>
+              </Button>
+              <Button variant="outline" size="sm" asChild>
+                <a 
+                  href="https://github.com/Ankitsarwadkr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View GitHub
                 </a>
               </Button>
             </div>

@@ -5,33 +5,68 @@ import { Button } from "@/components/ui/button";
 const Projects = () => {
   const projects = [
     {
-      title: "BookMyTurf - Turf Booking Portal",
-      period: "Feb 2025 – April 2025",
+      title: "BookMyTurf - Turf Booking Platform",
+      period: "Oct 2024 – Jan 2025",
       description:
-        "A dynamic booking system for turf owners and users with real-time slot availability and secure authentication.",
-      techStack: ["JSP", "AJAX", "MySQL", "Bootstrap"],
+        "A comprehensive turf booking system with real-time slot management, Razorpay payment integration, and role-based dashboards for customers, owners, and admins.",
+      techStack: ["Spring Boot", "React", "TypeScript", "MySQL", "Razorpay API", "JWT", "REST APIs"],
       features: [
-        "Real-time slot availability checking and booking",
-        "User authentication and session management",
-        "CRUD operations for bookings, user profiles, and cancellations",
-        "Booking confirmation system",
-        "Admin panel for Turf owner and user management",
-        "Owner dashboard for turfs and slot management",
+        "Real-time slot availability system with conflict prevention and booking validation",
+        "Razorpay payment gateway integration for secure online transactions",
+        "JWT-based authentication with role-based access control (Admin/Owner/Customer)",
+        "Automated email notifications for booking confirmations and updates",
+        "Owner dashboard for managing turfs, schedules, slots, and earnings analytics",
+        "Admin panel for user approval, owner verification, and payout processing",
+        "Responsive React frontend with TypeScript for type-safe development"
       ],
+      apiExample: `// Create Booking API
+POST /api/customer/bookings/create
+
+Request:
+{
+  "turfId": 5,
+  "slotIds": [12, 13, 14]
+}
+
+Response:
+{
+  "bookingId": "BKG123456",
+  "totalAmount": 1500,
+  "status": "PENDING_PAYMENT",
+  "razorpayOrderId": "order_abc123"
+}
+
+// Payment Verification
+POST /api/customer/payments/verify
+
+Request:
+{
+  "bookingId": "BKG123456",
+  "razorpayOrderId": "order_abc123",
+  "razorpayPaymentId": "pay_xyz789",
+  "razorpaySignature": "sig_hash..."
+}
+
+Response:
+{
+  "status": "CONFIRMED",
+  "message": "Booking confirmed successfully"
+}`,
+      github: "https://github.com/Ankitsarwadkr/turf_Backend",
     },
     {
       title: "Blog Application - RESTful Web App",
       period: "Jan 2025 – Mar 2025",
       description:
         "A secure REST API blogging platform with JWT-based authentication and role-based access control (Admin/User).",
-      techStack: ["Spring Boot", "Spring Security", "JWT", "MySQL", "Hibernate"],
+      techStack: ["Spring Boot", "Spring Security", "JWT", "MySQL", "Hibernate", "JUnit", "Mockito"],
       features: [
         "JWT-based authentication and role-based access control",
         "CRUD APIs for users, posts, comments, and likes with ownership checks",
         "Google OAuth2 integration for social authentication",
         "OpenAI API integration for automated category suggestions",
         "DTO-based mapping to separate database entities from API responses",
-        "Unit testing using JUnit & Mockito",
+        "Unit testing using JUnit & Mockito for service layer validation"
       ],
       apiExample: `// Authentication API Response
 {
@@ -56,34 +91,37 @@ const Projects = () => {
       github: "https://github.com/Ankitsarwadkr/BlogApplication.git",
     },
     {
-      title: "Shop Landing Page with Multilingual Support",
+      title: "Multilingual Services Shop",
       period: "Oct 2024 – Dec 2024",
       description:
-        "A multilingual online services shop landing page with Vanilla JS frontend, Spring Boot backend, MySQL database, and Google Translation API integration for seamless language switching.",
+        "A multilingual online services shop with Spring Boot backend, Google Translation API integration, and dynamic language switching (English/Marathi).",
       techStack: [
         "Spring Boot",
         "MySQL",
         "Google Translation API",
         "REST APIs",
         "HTML/CSS",
+        "Tailwind CSS"
       ],
       features: [
-        "Dynamic language toggle (English/Marathi)",
-        "Admin panel for services management",
-        "REST API endpoints for services catalog",
-        "Database-driven catalog management",
-        "Responsive design with Tailwind CSS",
-        "Real-time translation using Google Translation API",
-        "Users can send service enquiries directly from the website.",
+        "Dynamic real-time language toggle between English and Marathi",
+        "Admin panel for services catalog management (CRUD operations)",
+        "RESTful API endpoints for fetching and managing services",
+        "Database-driven multilingual content management",
+        "Responsive design with Tailwind CSS for mobile compatibility",
+        "Google Translation API integration for seamless translations",
+        "Service enquiry form with email notifications"
       ],
-      apiExample: `// getservices API Response
+      apiExample: `// Get Services API Response
+GET /api/services
 
+Response:
 {
   "id": 24,
   "titleEn": "DSC Enrollment",
   "titleMr": "डीएससी नोंदणी",
-  "descriptionEn": "DSC enrollment will be done here",
-  "descriptionMr": "डीएससी नोंदणी येथे केली जाईल.",
+  "descriptionEn": "DSC enrollment services available",
+  "descriptionMr": "डीएससी नोंदणी सेवा उपलब्ध",
   "categoryEn": "EPFO",
   "categoryMr": "ईपीएफओ",
   "imageUrl": "images/dsc.jpg"
@@ -157,7 +195,6 @@ const Projects = () => {
                 )}
 
                 <div className="flex flex-wrap gap-3">
-                  {/* GitHub button only if project.github exists */}
                   {project.github && (
                     <Button variant="outline" size="sm" className="gap-2" asChild>
                       <a
@@ -171,7 +208,6 @@ const Projects = () => {
                     </Button>
                   )}
 
-                  {/* Live Demo button only if project.liveDemo exists */}
                   {project.liveDemo && (
                     <Button variant="outline" size="sm" className="gap-2" asChild>
                       <a

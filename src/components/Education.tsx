@@ -28,11 +28,12 @@ const Education = () => {
   "graduation": "June 2025",
   "cgpa": 8.60,
   "coursework": [
-    "Basics of AI",
-    "Java Programming",
+    "Artificial Intelligence Fundamentals",
+    "Advanced Java Programming",
     "Database Management Systems",
     "Data Structures & Algorithms",
-    "Software Engineering"
+    "Software Engineering",
+    "Web Technologies"
   ]
 }`}
                 </code>
@@ -45,14 +46,15 @@ const Education = () => {
 {`{
   "degree": "Bachelor of Computer Applications (BCA)",
   "college": "Hirachand Nemchand College of Commerce",
-  "location": "Solapur",
+  "location": "Solapur, Maharashtra",
   "graduation": "July 2023",
-  "cgpa": 8.47
+  "cgpa": 8.47,
   "coursework": [
     "C and C++ Programming",
     "Operating Systems",
-    "MySQL"
-]
+    "MySQL Database",
+    "Object-Oriented Programming"
+  ]
 }`}
                 </code>
               </pre>

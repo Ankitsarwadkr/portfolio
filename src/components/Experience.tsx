@@ -30,22 +30,64 @@ const Experience = () => {
                 <div className="space-y-2 text-sm text-foreground">
                   <p className="flex items-start gap-2">
                     <span className="text-primary mt-1">▸</span>
-                    <span>Developed web applications using <span className="text-accent">Java</span>, <span className="text-accent">JSP</span>, and <span className="text-accent">MySQL</span>, implementing features like user registration and data management</span>
+                    <span>Developed full-stack web applications using <span className="text-accent">Java</span>, <span className="text-accent">JSP</span>, and <span className="text-accent">MySQL</span>, implementing features including user authentication, registration, and role-based access control</span>
                   </p>
                   <p className="flex items-start gap-2">
                     <span className="text-primary mt-1">▸</span>
-                    <span>Contributed to backend logic for dynamic web applications</span>
+                    <span>Designed and implemented <span className="text-accent">RESTful APIs</span> and backend business logic for dynamic web applications, handling user sessions and database transactions</span>
                   </p>
                   <p className="flex items-start gap-2">
                     <span className="text-primary mt-1">▸</span>
-                    <span>Integrated <span className="text-accent">AJAX</span> for dynamic page rendering and real-time data updates</span>
+                    <span>Integrated <span className="text-accent">AJAX</span> for asynchronous server communication, enabling real-time UI updates and improved user experience without full page reloads</span>
                   </p>
                   <p className="flex items-start gap-2">
                     <span className="text-primary mt-1">▸</span>
-                    <span>Performed debugging, testing, and code optimization to ensure application performance</span>
+                    <span>Debugged and optimized database queries and application code, resolving critical production bugs and improving overall system performance and reliability</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-primary mt-1">▸</span>
+                    <span>Collaborated with senior developers in code reviews and implemented best practices for clean code, error handling, and security measures</span>
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Additional Context Section */}
+        <div className="mt-6 terminal-window">
+          <div className="terminal-header">
+            <div className="terminal-dot red"></div>
+            <div className="terminal-dot yellow"></div>
+            <div className="terminal-dot green"></div>
+            <span className="text-xs text-muted-foreground ml-2">tech_stack.txt</span>
+          </div>
+          
+          <div className="p-6">
+            <div className="code-block text-sm">
+              <pre>
+                <code>
+{`# Technologies Used During Internship
+$ cat tech_stack.txt
+
+Backend:
+├── Java (Core & Advanced)
+├── JavaServer Pages (JSP)
+├── Servlets & JDBC
+└── MySQL Database
+
+Frontend:
+├── HTML5 & CSS3
+├── JavaScript (ES6+)
+├── AJAX for async operations
+└── Bootstrap for responsive design
+
+Tools & Workflow:
+├── Git for version control
+├── IntelliJ IDEA / Eclipse
+└── Apache Tomcat Server`}
+                </code>
+              </pre>
             </div>
           </div>
         </div>
