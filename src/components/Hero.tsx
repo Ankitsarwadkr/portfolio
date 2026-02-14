@@ -37,7 +37,7 @@ const Hero = () => {
                 <span className="text-primary">~</span>/portfolio <span className="text-accent">$</span> cat about.txt
               </p>
               <p className="text-foreground leading-relaxed">
-                Hi, I'm Ankit Sarwadkar, an MCA graduate specializing in Java backend development with hands-on experience 
+                Hi, I'm Ankit Sarwadkar, an MCA graduate specializing in Java backend development with hands on experience 
                 in building scalable web applications using Spring Boot, REST APIs, and MySQL. 
                 Passionate about clean code, efficient database design, and modern backend architectures.
               </p>
@@ -93,7 +93,7 @@ const Hero = () => {
               </Button>
               
               <Button variant="outline" size="sm" className="gap-2" asChild>
-                <a href="mailto:ankitsarwadkar21@gmail.com">
+                <a href="mailto:work@ankitsarwadkar.com">
                   <Mail className="w-4 h-4" />
                   Email
                 </a>

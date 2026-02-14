@@ -33,10 +33,10 @@ const Contact = () => {
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
                     <a 
-                      href="mailto:ankitsarwadkar21@gmail.com"
+                      href="mailto:work@ankitsarwadkar.com"
                       className="text-foreground hover:text-primary transition-colors"
                     >
-                      ankitsarwadkar21@gmail.com
+                      work@ankitsarwadkar.com
                     </a>
                   </div>
                 </div>
@@ -103,7 +103,7 @@ $ echo "Interested in: Full-time | Internship"
 
             <div className="flex flex-wrap gap-3">
               <Button variant="default" size="sm" asChild>
-                <a href="mailto:ankitsarwadkar21@gmail.com">
+                <a href="mailto:work@ankitsarwadkar.com">
                   Send Email
                 </a>
               </Button>
