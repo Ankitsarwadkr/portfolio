@@ -68,8 +68,8 @@ const Hero = () => {
                 asChild
               >
                 <a 
-                  href="/Ankit_Sarwadkar_Resume.pdf" 
-                  download="Ankit_Sarwadkar_Resume.pdf" 
+                  href="/Ankit_Sarwadkar_Java_Developer.pdf" 
+                  download="Ankit_Sarwadkar_Java_Developer.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
